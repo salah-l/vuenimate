@@ -1,0 +1,26 @@
+{
+  "name": "vuenimate",
+  "version": "0.1.0",
+  "description": "A Lightweight and Versatile Vue Animation Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salah-l/vuenimate.git"
+  },
+  "keywords": [
+    "vue",
+    "animation",
+    "vue",
+    "component",
+    "components"
+  ],
+  "author": "Salah Louizy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/salah-l/vuenimate/issues"
+  },
+  "homepage": "https://github.com/salah-l/vuenimate#readme"
+}
