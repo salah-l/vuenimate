@@ -1,6 +1,6 @@
 {
   "name": "vuenimate",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A Lightweight and Versatile Vue Animation Library",
   "main": "src/index.js",
   "scripts": {
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/salah-l/vuenimate/issues"
   },
-  "homepage": "https://github.com/salah-l/vuenimate#readme"
+  "homepage": "https://github.com/salah-l/vuenimate#readme",
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  }
 }
