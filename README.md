@@ -79,6 +79,46 @@ Below are some of the components available in vuenimate (more animations comming
 <va-fade-in-down>
 <va-fade-in-left>
 <va-fade-in-right>
+<va-fade-out-up> (Coming Soon)
+<va-fade-out-down> (Coming Soon)
+<va-fade-out-left> (Coming Soon)
+<va-fade-out-right> (Coming Soon)
+<va-slide-in-up> (Coming Soon)
+<va-slide-in-down> (Coming Soon)
+<va-slide-in-left> (Coming Soon)
+<va-slide-in-right> (Coming Soon)
+<va-slide-out-up> (Coming Soon)
+<va-slide-out-down> (Coming Soon)
+<va-slide-out-left> (Coming Soon)
+<va-slide-out-right> (Coming Soon)
+<va-zoom-in> (Coming Soon)
+<va-zoom-out> (Coming Soon)
+<va-bounce-in> (Coming Soon)
+<va-bounce-out> (Coming Soon)
+<va-bounce-in-up> (Coming Soon)
+<va-bounce-in-down> (Coming Soon)
+<va-bounce-in-left> (Coming Soon)
+<va-bounce-in-right> (Coming Soon)
+<va-bounce-out-up> (Coming Soon)
+<va-bounce-out-down> (Coming Soon)
+<va-bounce-out-left> (Coming Soon)
+<va-bounce-out-right> (Coming Soon)
+<va-rotate-in> (Coming Soon)
+<va-rotate-out> (Coming Soon)
+<va-flip-in-x> (Coming Soon)
+<va-flip-in-y> (Coming Soon)
+<va-flip-out-x> (Coming Soon)
+<va-flip-out-y> (Coming Soon)
+<va-roll-in> (Coming Soon)
+<va-roll-out> (Coming Soon)
+<va-light-speed-in> (Coming Soon)
+<va-light-speed-out> (Coming Soon)
+<va-swing> (Coming Soon)
+<va-shake> (Coming Soon)
+<va-tada> (Coming Soon)
+<va-wobble> (Coming Soon)
+<va-jello> (Coming Soon)
+<va-heart-beat> (Coming Soon)
 ```
 
 ##### Props:
@@ -97,6 +137,10 @@ config = {
       };
 ```
 
+```
+// Similar structure as above for each component
+```
+
 ##### Events:
 
 **animation-ended**: Emitted when the animation is complete. This is true to all animations.
@@ -104,7 +148,39 @@ config = {
 ##### Triggers:
 
 ```
-// Similar structure as above for each component
+on-click
+on-double-click
+on-right-click
+on-mouse-down
+on-mouse-up
+on-mouse-move
+on-mouse-over
+on-mouse-out
+on-mouse-enter
+on-mouse-leave
+on-touch-start
+on-touch-move
+on-touch-end
+on-touch-cancel
+on-focus
+on-blur
+on-key-press
+on-key-down
+on-key-up
+on-scroll
+on-drag
+on-drag-start
+on-drag-end
+on-drag-enter
+on-drag-leave
+on-drag-over
+on-drop
+on-change
+on-input
+on-submit
+on-resize
+on-wheel
+on-scroll-to-element
 ```
 
 ##### Customization:
