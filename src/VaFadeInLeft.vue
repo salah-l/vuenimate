@@ -1,12 +1,13 @@
 <template>
-  <va-base :config="mergedConfig">
+  <va-base v-bind="this.$props" :config="mergedConfig">
     <slot></slot>
   </va-base>
 </template>
 
 <script>
 import VaBase from "./VaBase.vue";
-
+import { userInteractionTriggers } from "./config/triggers";
+import { scrollTriggers } from "./config/triggers";
 export default {
   components: {
     VaBase,
@@ -16,6 +17,12 @@ export default {
       type: Object,
       default: () => ({}),
     },
+    threshold: {
+      type: Number,
+      default: 0.5, // Default threshold value
+    },
+    ...userInteractionTriggers,
+    ...scrollTriggers,
   },
   computed: {
     mergedConfig() {
