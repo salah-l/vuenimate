@@ -40,12 +40,45 @@ export default {
 </script>
 ```
 
+You can also specify animation properties with the config prop.
+
+```
+<template>
+<va-fade-in-up :config="{duartion: 2000, delay: 50}">
+    <hero-section></hero-section>
+</va-fade-in-up>
+</template>
+```
+
+Using triggers you can specify when do you want your animation to start, the default trigger is on mount.
+
+```
+<template>
+<va-fade-in-up on-click> //This animation will start when we click firstElementChild (in this case, hero-section)
+    <hero-section></hero-section>
+</va-fade-in-up>
+</template>
+```
+
+You can start an animation when you scroll to the element and it is visible on the page using `on-scroll-to-element`. You can specify the threshold which indicate how much of the element should be visible to start animation.
+
+```
+<template>
+<va-fade-in-up on-scroll-to-element :threashold="0.3"> //hero-section will fade in when 0.3 of it is visible on scroll
+    <hero-section></hero-section>
+</va-fade-in-up>
+</template>
+```
+
 ## API Reference
 
-Below are some of the components available in vuenimate:
+Below are some of the components available in vuenimate (more animations comming soon):
 
 ```
 <va-fade-in-up>
+<va-fade-in-down>
+<va-fade-in-left>
+<va-fade-in-right>
 ```
 
 ##### Props:
@@ -66,7 +99,9 @@ config = {
 
 ##### Events:
 
-**animation-ended**: Emitted when the animation is complete. This is true to all animation.
+**animation-ended**: Emitted when the animation is complete. This is true to all animations.
+
+##### Triggers:
 
 ```
 // Similar structure as above for each component
