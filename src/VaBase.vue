@@ -15,7 +15,7 @@ export default {
     },
     threshold: {
       type: Number,
-      default: 0.5, // Default threshold value
+      default: 0.05, // Default threshold value
     },
     ...userInteractionTriggers,
     ...scrollTriggers,
@@ -49,7 +49,10 @@ export default {
     this.$nextTick(() => {
       this.elementToBeAnimated = this.$refs.element.firstElementChild;
       this.setupUserInteractionTriggers();
-      this.setupScrollTrigger();
+
+      if (this.onScrollToElement) {
+        this.setupScrollTrigger();
+      }
 
       if (!this.isTriggered) {
         this.playAnimation();
@@ -58,7 +61,6 @@ export default {
   },
   methods: {
     setupUserInteractionTriggers() {
-      console.log(this);
       Object.keys(userInteractionTriggers).forEach((trigger) => {
         // console.log(this);
         if (this[trigger]) {
@@ -72,9 +74,15 @@ export default {
       });
     },
     setupScrollTrigger() {
+      // Calculate dynamic threshold based on element height and viewport height
+
+      const viewportThreshold = window.innerHeight * this.threshold;
+
+      console.log("ViewPort: ", viewportThreshold);
+
       const options = {
         root: null, // relative to the viewport
-        threshold: [this.threshold],
+        threshold: 0,
       };
 
       //Determine if visibility triggers are on
@@ -86,15 +94,25 @@ export default {
         this.elementToBeAnimated.style.opacity = 0;
       }
 
-      this.observer = new IntersectionObserver((entries) => {
-        const isVisible = entries.some((entry) => entry.isIntersecting);
-        if (this.onScrollToElement && isVisible) {
-          this.playAnimation();
-          this.observer.disconnect();
-        }
-      }, options);
+      const elementToBeAnimated = this.elementToBeAnimated;
 
-      this.observer.observe(this.elementToBeAnimated);
+      // Function to handle scroll event
+      const onScroll = () => {
+        // Calculate the trigger point based on the threshold
+        const triggerPoint = window.innerHeight * this.threshold;
+        const elementTop = elementToBeAnimated.getBoundingClientRect().top;
+
+        // Check if the element top has passed the trigger point
+        if (elementTop <= triggerPoint) {
+          this.playAnimation();
+
+          // Optionally, remove the event listener if it's a one-time animation
+          window.removeEventListener("scroll", onScroll);
+        }
+      };
+
+      // Attach the scroll event listener to the window
+      window.addEventListener("scroll", onScroll);
     },
     playAnimation() {
       this.animation = this.elementToBeAnimated.animate(

@@ -72,8 +72,6 @@ export default {
       return thisAnimationConfig;
     },
   },
-  mounted() {
-    console.log(this);
-  },
+  mounted() {},
 };
 </script>

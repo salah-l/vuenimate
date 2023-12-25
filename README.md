@@ -44,7 +44,7 @@ You can also specify animation properties with the config prop.
 
 ```
 <template>
-<va-fade-in-up :config="{duartion: 2000, delay: 50}">
+<va-fade-in-up :config="{duration: 2000, delay: 50}">
     <hero-section></hero-section>
 </va-fade-in-up>
 </template>
@@ -60,7 +60,7 @@ Using triggers you can specify when do you want your animation to start, the def
 </template>
 ```
 
-You can start an animation when you scroll to the element and it is visible on the page using `on-scroll-to-element`. You can specify the threshold which indicate how much of the element should be visible to start animation.
+You can start an animation when you scroll to the element and it is visible on the page using on-scroll-to-element. You can specify the threshold which indicate how much of the element should be visible to start animation.
 
 ```
 <template>
@@ -72,7 +72,7 @@ You can start an animation when you scroll to the element and it is visible on t
 
 ## API Reference
 
-Below are some of the components available in vuenimate (more animations comming soon):
+Below are some of the components available in vuenimate (more animations coming soon):
 
 ```
 <va-fade-in-up>
@@ -185,7 +185,7 @@ on-scroll-to-element
 
 ##### Customization:
 
-You can use the <va-base> component to make different types of custom animations. The VaBase component has a keyframes property in its config prop, you can set it to whatever animation you want to make.
+You can use the `<va-base>` component to make different types of custom animations. The VaBase component has a keyframes property in its config prop, you can set it to whatever animation you want to make.
 
 ```
 config = {
